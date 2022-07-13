@@ -17,12 +17,9 @@ const CarouselAlta = () => {
 
     const buscarMoedaAlta = async () => {
     const { data } = await axios.get(MoedaAlta(currency));
-    console.log(data);
     setTrending(data);
   };
 
-
-  console.log(trending);
 
   useEffect(() => {
     buscarMoedaAlta();
@@ -31,12 +28,16 @@ const CarouselAlta = () => {
 
     const responsive = {
       0: {
+        items: 1,
+      },
+      500:{
         items: 2,
       },
-      512: {
-        items: 4,
-      },
-    }
+        1024: {
+            items: 4
+        }
+      }
+
 
     const items = trending.map((coin) => {
 
@@ -48,8 +49,8 @@ const CarouselAlta = () => {
           src={coin?.image}
           alt={coin.name}
           className='moeda-img'
-          height="80"
-          style={{marginBottom: 10}}
+          height="40"
+          style={{marginBottom: 30}}
           />
           <div className='moeda-texto'>
             <span className='moeda-symb'>

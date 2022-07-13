@@ -9,7 +9,6 @@ const Header = () => {
     const [navbar, setNavbar] = useState(false);
 
     const { currency, setCurrency } = CryptoState();
-    console.log(currency);
 
     const changeNav = () => {
         if(window.scrollY >= 1){
@@ -23,16 +22,16 @@ const Header = () => {
 
     return(
         <Navbar className={navbar? 'navbar ativa' : 'navbar'} expand="lg">
-      <Container>
-        <img src={Logo} alt='Logo CriptoGama'/>
+      <Container className="nav-content">
+        <a clas href={`/`}><img src={Logo} alt='Logo CriptoGama'/></a>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
         <div className='nav-list'>
         <Nav className="nav-links">
             <Nav.Link className='links-item'  href="#hero">Home</Nav.Link>
-            <Nav.Link className='links-item'  href="#hero">Home</Nav.Link>
-            <Nav.Link className='links-item'  href="#hero">Home</Nav.Link>
-            <Nav.Link className='links-item'  href="#hero">Home</Nav.Link>
+            <Nav.Link className='links-item'  href="#lista">Lista de Cryptos</Nav.Link>
+            <Nav.Link className='links-item'  href="#contato">Contato</Nav.Link>
+            <Nav.Link className='links-item'  href="#links">Links Úteis</Nav.Link>
           </Nav>
           <Nav className='nav-moeda'>
             <select
