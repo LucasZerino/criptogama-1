@@ -48,8 +48,7 @@ const ListaCryptos = () => {
 
   const buscaManual = () => {
     return coins.filter((coin) =>
-      coin.name.toLowerCase().includes(buscar) ||
-      coin.name.toLowerCase().includes(buscar)
+      coin.name.toLowerCase().includes(buscar) || coin.name.toLowerCase().includes(buscar)
     )
   }
 
